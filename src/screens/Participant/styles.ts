@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 10,
   },
   name: {
     flex: 1,
@@ -15,17 +16,17 @@ export const styles = StyleSheet.create({
     color: "#fff",
     marginLeft: 16,
   },
-  buttonText: {
-    color: "#fff",
-    fontSize: 24,
-  },
   button: {
+    flexDirection: "row",
     width: 56,
     height: 56,
     borderRadius: 5,
-    marginTop: 20,
     backgroundColor: "#E23C44",
     alignItems: "center",
     justifyContent: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 24,
   },
 });
