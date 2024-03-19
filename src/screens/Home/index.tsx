@@ -10,6 +10,7 @@ import {
 import { styles } from "./styles";
 import { Participant } from "../Participant";
 import { useState } from "react";
+import { format } from "date-fns";
 
 export default function Home() {
   const [participants, setParticipants] = useState<string[]>(["Thayana"]);
@@ -27,10 +28,15 @@ export default function Home() {
   }
 
   function handleParticipantRemove(name: string) {
+    console.log("remove");
     Alert.alert("Remover", `Remover o participante ${name} ?`, [
       {
         text: "Sim",
-        onPress: () => alert("Deletado!"),
+        onPress: () => {
+          setParticipants((prevState) =>
+            prevState.filter((participant) => participant !== name)
+          );
+        },
       },
       {
         text: "não",
@@ -38,10 +44,14 @@ export default function Home() {
       },
     ]);
   }
+
+  const dateFormat = format(new Date(2024, 2, 19), "dd/MMM/yyyy");
+
   return (
     <View style={styles.container}>
       <Text style={styles.eventName}>Nome do evento</Text>
-      <Text style={styles.eventDate}>Sexta, 4 de novembro de 2024</Text>
+
+      <Text style={styles.eventDate}>Data do evento: {dateFormat}</Text>
 
       <View style={styles.form}>
         <TextInput

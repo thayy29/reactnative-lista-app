@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   eventDate: {
     color: "#6B6B6B",
     fontSize: 16,
+    paddingTop: 10,
   },
   input: {
     flex: 1,
